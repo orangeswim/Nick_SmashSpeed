@@ -1,6 +1,6 @@
-# NASB mirror match recolor mod
+# NASB Mirror Match Mod
 
-This mod will recolor duplicate characters by tinting the original material.
+This mod will recolor duplicate characters by simply tinting the model.
 
 ## Installation
 
