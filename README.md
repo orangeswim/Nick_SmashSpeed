@@ -2,12 +2,15 @@
 
 This mod will recolor duplicate characters by simply tinting the model.
 
+![image](https://user-images.githubusercontent.com/27714637/136114407-1abdd8ac-16f8-4d5f-8159-93a650315cec.png)
+
+
 ## Installation
 
 *If your game isn't modded with BepinEx, DO THAT FIRST!*
-Simply go to the [latest BepinEx release](https://github.com/BepInEx/BepInEx/releases) and extract BepinEx_x64_VERSION.zip directly into your game's folder, then run the game once to install BepinEx properly.
+Simply go to the [latest BepinEx release](https://github.com/BepInEx/BepInEx/releases) and extract `BepinEx_x64_VERSION.zip` directly into your game's folder, then run the game once to install BepinEx properly.
 
-Next, go to the [latest release of this mod](https://github.com/megalon/nick-mirror-match-mod/releases/latest) and place the dll in `BepInEx\plugins`
+Next, go to the [latest release of this mod](https://github.com/megalon/nick-mirror-match-mod/releases/latest) and place the dll in `BepInEx\plugins\`
 
 That's it!
 
