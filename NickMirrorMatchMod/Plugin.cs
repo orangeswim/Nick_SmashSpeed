@@ -30,9 +30,9 @@ namespace NickMirrorMatchMod
             Instance = this;
 
             var config = this.Config;
-            tintColor1 = config.Bind<Color>("Colors", "TintColor1", new Color(0, 0, 1, 0.66f));
-            tintColor2 = config.Bind<Color>("Colors", "TintColor2", new Color(1, 0, 0, 0.66f));
-            tintColor3 = config.Bind<Color>("Colors", "TintColor3", new Color(0, 1, 1, 0.66f));
+            tintColor1 = config.Bind<Color>("Colors", "TintColor1", new Color(0.51f, 0.27f, 1, 0.66f));
+            tintColor2 = config.Bind<Color>("Colors", "TintColor2", new Color(1, 0.93f, 0.23f, 0.66f));
+            tintColor3 = config.Bind<Color>("Colors", "TintColor3", new Color(0.16f, 0.95f, 0.82f, 0.66f));
 
             config.SettingChanged += OnConfigSettingChanged;
 
