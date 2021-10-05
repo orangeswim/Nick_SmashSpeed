@@ -24,11 +24,11 @@ namespace NickMirrorMatchMod.Patches
             // Try to get color from config, if it exists
             if (config.TryGetEntry<Color>(new ConfigDefinition("Colors", $"TintColor{number}"), out colorEntry))
             {
-                Debug.Log($"Setting duplicate {number} to color {colorEntry.Value.ToString()}");
+                Plugin.LogInfo($"Setting duplicate {number} to color {colorEntry.Value.ToString()}");
                 color = colorEntry.Value;
             }else
             {
-                Debug.LogError($"Could not get config entry for value TintColor{number} !");
+                Plugin.LogError($"Could not get config entry for value TintColor{number} !");
             }
 
             __result = color;

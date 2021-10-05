@@ -7,6 +7,7 @@ using HarmonyLib;
 using System.Reflection;
 using System.IO;
 using UnityEngine;
+using BepInEx.Logging;
 
 namespace NickMirrorMatchMod
 {
@@ -20,7 +21,7 @@ namespace NickMirrorMatchMod
 
         private void Awake()
         {
-            Logger.LogInfo($"Plugin {PluginInfo.PLUGIN_NAME} is loaded!");
+            Logger.LogDebug($"Plugin {PluginInfo.PLUGIN_NAME} is loaded!");
 
             if (Instance)
             {
@@ -42,8 +43,13 @@ namespace NickMirrorMatchMod
 
         static void OnConfigSettingChanged(object sender, EventArgs args)
         {
-            Debug.Log($"{PluginInfo.PLUGIN_NAME} OnConfigSettingChanged");
+            LogDebug($"{PluginInfo.PLUGIN_NAME} OnConfigSettingChanged");
             Plugin.Instance?.Config?.Reload();
         }
+
+        internal static void LogDebug(string message) => Instance.Log(message, LogLevel.Debug);
+        internal static void LogInfo(string message) => Instance.Log(message, LogLevel.Info);
+        internal static void LogError(string message) => Instance.Log(message, LogLevel.Error);
+        private void Log(string message, LogLevel logLevel) => Logger.Log(logLevel, message);
     }
 }
