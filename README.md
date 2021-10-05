@@ -2,7 +2,7 @@
 
 This mod will recolor duplicate characters by simply tinting the model.
 
-![image](https://user-images.githubusercontent.com/27714637/136114407-1abdd8ac-16f8-4d5f-8159-93a650315cec.png)
+![image](https://user-images.githubusercontent.com/27714637/136115464-9b238b9e-0df1-437c-8271-4c572d629cba.png)
 
 
 ## Installation
