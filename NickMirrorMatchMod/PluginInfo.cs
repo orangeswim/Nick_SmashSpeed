@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace NickMirrorMatchMod
+﻿namespace NickJukeboxMod
 {
     class PluginInfo
     {
-        public const string PLUGIN_GUID = "megalon.nick_mirror_match_mod";
-        public const string PLUGIN_NAME = "NickMirrorMatchMod";
-        public const string PLUGIN_VERSION = "1.0.1";
+        public const string PLUGIN_GUID = "orangeswim.nick_jukebox_mod";
+        public const string PLUGIN_NAME = "NickJukeboxMod";
+        public const string PLUGIN_VERSION = "1.0.";
     }
 }

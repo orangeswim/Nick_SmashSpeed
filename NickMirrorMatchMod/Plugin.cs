@@ -1,23 +1,15 @@
-﻿using System;
-using BepInEx;
-using BepInEx.Configuration;
-using Nick;
-using System.Collections.Generic;
-using HarmonyLib;
-using System.Reflection;
-using System.IO;
-using UnityEngine;
+﻿using BepInEx;
 using BepInEx.Logging;
+using HarmonyLib;
+using System;
+using System.Reflection;
 
-namespace NickMirrorMatchMod
+namespace NickJukeboxMod
 {
     [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
     public class Plugin : BaseUnityPlugin
     {
         internal static Plugin Instance;
-        static ConfigEntry<Color> tintColor1;
-        static ConfigEntry<Color> tintColor2;
-        static ConfigEntry<Color> tintColor3;
 
         private void Awake()
         {
@@ -31,9 +23,6 @@ namespace NickMirrorMatchMod
             Instance = this;
 
             var config = this.Config;
-            tintColor1 = config.Bind<Color>("Colors", "TintColor1", new Color(0.51f, 0.27f, 1, 0.66f));
-            tintColor2 = config.Bind<Color>("Colors", "TintColor2", new Color(1, 0.93f, 0.23f, 0.66f));
-            tintColor3 = config.Bind<Color>("Colors", "TintColor3", new Color(0.16f, 0.95f, 0.82f, 0.66f));
 
             config.SettingChanged += OnConfigSettingChanged;
 
