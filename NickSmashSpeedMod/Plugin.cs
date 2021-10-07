@@ -1,15 +1,20 @@
 ﻿using BepInEx;
+using BepInEx.Configuration;
 using BepInEx.Logging;
 using HarmonyLib;
 using System;
 using System.Reflection;
 
-namespace NickJukeboxMod
+namespace NickSmashSpeedMod
 {
     [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
     public class Plugin : BaseUnityPlugin
     {
         internal static Plugin Instance;
+
+        static ConfigEntry<float> gravity;
+        static ConfigEntry<float> di;
+        static ConfigEntry<float> gamespeed;
 
         private void Awake()
         {
@@ -22,9 +27,14 @@ namespace NickJukeboxMod
             }
             Instance = this;
 
+
             var config = this.Config;
+            gravity = config.Bind<float>("Physics", "Gravity", 1f);
+            di = config.Bind<float>("Physics", "Di", 1f);
+            gamespeed = config.Bind<float>("Physics", "Gamespeed", 0.95f);
 
             config.SettingChanged += OnConfigSettingChanged;
+
 
             // Harmony patches
             Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly());
