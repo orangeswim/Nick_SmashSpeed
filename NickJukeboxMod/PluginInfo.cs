@@ -4,6 +4,6 @@
     {
         public const string PLUGIN_GUID = "orangeswim.nick_jukebox_mod";
         public const string PLUGIN_NAME = "NickJukeboxMod";
-        public const string PLUGIN_VERSION = "1.0.";
+        public const string PLUGIN_VERSION = "1.2";
     }
 }
