@@ -1,13 +1,25 @@
 ﻿using BepInEx.Configuration;
 using HarmonyLib;
 using Nick;
-using NickSmashSpeedMod;
 
 namespace NickSmashSpeedMod.Patches
 {
 
-   
+    [HarmonyPatch(typeof(GameStartScript), "DoStart")]
+    class CompetetiveCheck
+    {
+        public static bool competetiveCheck;
 
+        static bool Prefix(ref GameRunner currRunner)
+        {
+            CompetetiveCheck.competetiveCheck = currRunner.IsOnlineCompetetiveMatch;
+            Plugin.LogInfo($"IsOnlineCompetetiveMatch: {currRunner.IsOnlineCompetetiveMatch}");
+
+
+            // Continue to original
+            return true;
+        }
+    }
 
 
     [HarmonyPatch(typeof(GamePhysicsSettings.Settings), "Copy")]
@@ -18,11 +30,19 @@ namespace NickSmashSpeedMod.Patches
         static ConfigEntry<float> gamespeed;
         static bool Prefix(ref GamePhysicsSettings.Settings s)
         {
+            if (CompetetiveCheck.competetiveCheck)
+            {
+                Plugin.LogInfo($"CompetetiveMode, SmashSpeed settings disabled.");
+                return true;
+            }
+
             var config = Plugin.Instance.Config;
+
             if (config.TryGetEntry<float>(new ConfigDefinition("Physics", "Gravity"), out gravity))
             {
                 Plugin.LogInfo($"Setting gravity to {gravity.Value}");
                 s.gravity = gravity.Value;
+
             }
             else
             {
