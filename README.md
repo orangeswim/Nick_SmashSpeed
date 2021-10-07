@@ -1,6 +1,9 @@
 # NASB SmashSpeed Mod
 
-This mod will unlock all jukebox songs , gallery & avatars.
+My friend thought the game should play a little slower to match smash speed.
+So here is smashspeed mod.
+
+You can also change the gravity!
 
 ## Installation
 
@@ -10,7 +13,16 @@ Simply go to the [latest BepinEx release](https://github.com/BepInEx/BepInEx/rel
 Next, go to the [latest release of this mod](https://github.com/orangeswim/Nick_SmashSpeed/releases/tag/stable) and extract the zip in your game's install directory.
 This will place the dll in `BepInEx\plugins\`.
 
+You can change the settings in the `BepInEx/config/orangeswim.nick_SmashSpeed_mod.cfg` file.
+The default changes the gamespeed to 95% from normal.
+
+To play with your friends online, make sure you all have the same version of the mod and the same settings. If you don't, your games will desync and the match will exit.
+
 That's it!
+
+## Warning
+
+Use this mod to have fun with friends. I don't advise this mod to be used to cheat or create an unfair gameplay advantage. While testing shows that it will desync and close the match, the developers of this mod aren't responsible for your actions.
 
 ## Credits
 
